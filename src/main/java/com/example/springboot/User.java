@@ -6,7 +6,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-
 @Entity
 @Table(name = "u1")
 public class User {
@@ -15,7 +14,6 @@ public class User {
     private long id;
     private String name;
     private String email;
-    private String passHash;
     public User(){}
     public User(String name, String email) {
         this.name = name;
@@ -26,11 +24,5 @@ public class User {
     }
     public String getEmail() {
         return email;
-    }
-    public String getPassHash() {
-        return passHash;
-    }
-    public void setPassHash(String passhash) {
-       this.passHash = passhash;
     }
 }

@@ -1,3 +1,38 @@
+// import { Component } from '@angular/core';
+// import { ActivatedRoute, Router } from '@angular/router';
+// import { UserService } from '../user-service';
+// import { User } from '../user';
+// import { CommonModule } from '@angular/common';
+// import { FormsModule } from '@angular/forms';
+
+// @Component({
+//   selector: 'app-user-form',
+//   standalone: true,
+//   imports: [CommonModule, FormsModule],
+//   templateUrl: './user-form.html',
+//   styleUrls: ['./user-form.css']
+// })
+
+// export class UserForm {
+
+//   user: User;
+
+//   constructor(
+//     private route: ActivatedRoute, 
+//       private router: Router, 
+//         private userService: UserService) {
+//     this.user = new User();
+//   }
+
+//   onSubmit() {
+//     this.userService.save(this.user).subscribe(result => this.gotoUserList());
+//   }
+
+//   gotoUserList() {
+//     this.router.navigate(['/users']);
+//   }
+// }
+
 import { Component } from '@angular/core';
 import { NgForm, FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -8,7 +43,7 @@ import { User } from '../user';
 @Component({
   selector: 'app-user-form',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule],  // ✅ Add these
   templateUrl: './user-form.html',
   styleUrls: ['./user-form.css']
 })
@@ -16,11 +51,8 @@ export class UserForm {
   user: User = {
     id: 0,
     name: '',
-    email: '',
-    password: ''
+    email: ''
   };
-  confirmPassword = '';
-
 
   constructor(private userService: UserService, private router: Router) {}
 
