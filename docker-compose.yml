@@ -1,0 +1,17 @@
+
+services:
+  backend:
+    image: aprilzingher/emailspring
+    platform: linux/amd64
+    build:
+      context: ./springboot
+    ports:
+      - "8080:8080"
+
+  frontend:
+    image: aprilzingher/emailangular
+    platform: linux/amd64
+    build:
+      context: ./angularclient
+    ports:
+    - "80:80"
